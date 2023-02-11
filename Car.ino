@@ -10,10 +10,6 @@ int in4 = 8;
 const int IR_RECEIVE_PIN = 11; 
 
 void setup() {
-  // put your setup code here, to run once:
-//  Serial.begin(9600);
-//  IrReceiver.begin(3, DISABLE_LED_FEEDBACK);
-//  pinMode(7, OUTPUT);
   pinMode(enA, OUTPUT);
   pinMode(in1, OUTPUT);
   pinMode(in2, OUTPUT);
@@ -67,7 +63,6 @@ void Right() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   if (IrReceiver.decode()){ 
     String signal = String(IrReceiver.decodedIRData.decodedRawData, HEX);
     if (signal == "9f600707") {
